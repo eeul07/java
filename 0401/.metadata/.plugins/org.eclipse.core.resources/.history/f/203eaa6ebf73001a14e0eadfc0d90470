@@ -1,0 +1,35 @@
+package ex03;
+
+public class Sample {
+
+	public static void main(String[] args) {
+	/*	Report r=new Report();
+		r.setSno("01");
+		r.setSname("È«±æµ¿");
+		r.setKor(90);
+		r.setEng(100);
+		r.setMat(77);
+		// r.printList();
+		r.printReport(); */
+	
+		Report[] report=new Report[2];
+		report[0]=new Report();
+		report[0].setSno("01");
+		report[0].setSname("È«±æµ¿");
+		report[0].setKor(90);
+		report[0].setEng(90);
+		report[0].setMat(90);
+		
+		report[1]=new Report();
+		report[1].setSno("02");
+		report[1].setSname("½ÉÃ»ÀÌ");
+		report[1].setKor(80);
+		report[1].setEng(80);
+		report[1].setMat(80);
+		
+		for(int i=0; i<report.length; i++) {
+			report[i].printList();
+		}
+		
+	} // main method
+} // class

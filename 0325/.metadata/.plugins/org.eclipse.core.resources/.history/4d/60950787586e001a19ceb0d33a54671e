@@ -1,0 +1,12 @@
+package ex04;
+
+public class Sample {
+
+	public static void main(String[] args) {
+		// 배열(참조타입)
+		int[] d= {90, 80, 100};
+		System.out.println("1번째:" + d[0]);
+
+	}
+
+}

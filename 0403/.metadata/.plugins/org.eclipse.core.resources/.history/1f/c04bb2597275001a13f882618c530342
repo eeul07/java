@@ -1,0 +1,98 @@
+package ex01;
+
+import java.util.Scanner;
+
+public class Sample {
+
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		StudentDAO dao=new StudentDAO(); // DAO에 있는 메서드를 사용하기 위한 명령어
+		boolean run=true;
+		
+		while(run) {
+		System.out.println("--------------------------------------------------------");
+		System.out.println("| 1.입력 | 2.조회 | 3.목록 | 4.수정 | 5.삭제 | 6.종료 |");
+		System.out.println("--------------------------------------------------------"); 
+		System.out.print("메뉴선택>");
+		int menu=s.nextInt();
+		switch(menu) {
+		case 1: 
+			System.out.println("---------------");
+			System.out.println("학생입력");
+			System.out.println("---------------");
+			System.out.print("학번(두자리입력)>");
+			StudentVO vo=new StudentVO();
+			String sno=s.next();
+			
+			try { // try catch문 : 에러가 났을 경우 실행할 내용입력
+				vo=dao.read(sno);
+				if(vo.getSno()==null) {
+				System.out.print("성명>");
+				vo.setSname(s.next());
+				System.out.print("전화번호>");
+				vo.setTel(s.next());
+				System.out.println("입력완료\n");
+				}else {
+					System.out.println("이미 존재하는 학번입니다.");
+				}
+				}catch(Exception e) {
+					System.out.println("실행불가");
+				}
+			break;
+		case 2:
+			System.out.println("---------------");
+			System.out.println("학생조회");
+			System.out.println("---------------");
+			System.out.print("조회할학번>");
+			sno=s.next();
+			vo=new StudentVO();
+			
+			try {
+			vo=dao.read(sno);
+			if(vo.getSno()==null) {
+				System.out.println("학생이 존재하지 않습니다.");
+			}else {
+			System.out.println("성명:" + vo.getSname());
+			System.out.println("전화번호:" + vo.getTel());
+			System.out.println();
+			}
+			}
+			catch(Exception e) {
+				System.out.println("실행불가");
+			}
+			break;
+		case 3:
+			
+			break;
+		case 4:
+			
+			break;
+		case 5:
+			System.out.println("삭제할번호>");
+			sno=s.next();
+			
+			try {
+			vo=dao.read(sno);
+			if(vo.getSno()==null) {
+				System.out.println("학생이 존재하지 않습니다.");
+			}else {
+				dao.delete(sno);
+			}
+			System.out.println("삭제완료\n");
+			}
+			catch(Exception e) {
+				System.out.println("실행불가");
+			}
+			break;
+		case 6:
+			run=false;
+			System.out.println("프로그램 종료");
+			break;
+		default:
+			System.out.println("잘못된 입력입니다.");
+		}
+		}
+		
+	} // main method
+
+} // class

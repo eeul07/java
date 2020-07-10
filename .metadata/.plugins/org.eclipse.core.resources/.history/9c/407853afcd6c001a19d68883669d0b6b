@@ -1,0 +1,14 @@
+package ex05;
+
+public class Sample {
+
+	public static void main(String[] args) {
+		//산술연산자
+		int num1=10;
+		int num2=5;
+		int sum= num1 + num2;
+		//+, -, *, /, % 연산결과 출력
+		System.out.println(num1 + "+" + num2 + "=" + sum);
+	}
+
+}

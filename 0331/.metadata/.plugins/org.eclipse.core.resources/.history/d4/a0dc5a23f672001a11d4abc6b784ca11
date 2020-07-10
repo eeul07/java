@@ -1,0 +1,31 @@
+package ex02;
+
+import java.util.Scanner;
+
+public class Sample {
+
+	public static void main(String[] args) {
+		cal();
+
+	}
+	public static void cal() {
+		Scanner s=new Scanner(System.in);
+		System.out.print("x=");
+		int x=s.nextInt();
+		
+		System.out.print("y=");
+		int y=s.nextInt();
+		
+	//	System.out.println("x=" + c1.x);
+	//	System.out.println("y=" + c1.y);
+		System.out.println("x+y=" + c1.plus(x, y));
+		
+		System.out.println("x-y=" + c1.minus(x, y));
+		
+		System.out.println("x*y=" + c1.mult(x, y));
+		
+		double result = c1.divide(x, y);
+		System.out.println("x/y=" + result);
+	}
+
+}

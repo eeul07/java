@@ -1,0 +1,20 @@
+package ex01;
+
+public class Sample {
+
+	public static void main(String[] args) {
+		Student s1=new Student(); // 생성자(기본생성자 생략)
+		s1.sno = "01";
+		s1.sname = "홍길동";
+		s1.tel = "010-0000-0000";
+		s1.print(s1);
+		
+		Student s2=new Student();
+		s2.sno = "02";
+		s2.sname = "심청이";
+		s2.tel = "010-1111-1111";
+		s2.print(s2);
+
+	}
+
+}

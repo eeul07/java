@@ -1,0 +1,112 @@
+package ex01;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Sample {
+
+	public static void main(String[] args)throws Exception {
+		Scanner s=new Scanner(System.in);
+		StudentDAO dao=new StudentDAO(); // DAO에 있는 메서드를 사용하기 위한 명령어
+		boolean run=true;
+		
+		while(run) {
+		System.out.println("--------------------------------------------------------");
+		System.out.println("| 1.입력 | 2.조회 | 3.목록 | 4.수정 | 5.삭제 | 6.종료 |");
+		System.out.println("--------------------------------------------------------"); 
+		System.out.print("메뉴선택>");
+		int menu=s.nextInt();
+		switch(menu) {
+		case 1: // 입력
+			System.out.println("-------------------------");
+			System.out.println("학생입력");
+			System.out.println("-------------------------");
+			System.out.print("학번(두자리입력)>");
+			StudentVO vo=new StudentVO();
+			String sno=s.next();
+	
+				vo=dao.read(sno);
+				if(vo.getSno()==null) {
+				vo.setSno(sno);
+				System.out.print("이름>");
+				vo.setSname(s.next());
+				System.out.print("전화번호>");
+				vo.setTel(s.next());
+				dao.insert(vo);
+				System.out.println("입력완료\n");
+				}else {
+					System.out.println("이미 존재하는 학번입니다.\n");
+				}
+			break;
+		case 2: // 조회
+			System.out.println("-------------------------");
+			System.out.println("학생조회");
+			System.out.println("-------------------------");
+			System.out.print("조회할학번>");
+			sno=s.next();
+			
+			vo=dao.read(sno);
+			if(vo.getSno()==null) {
+				System.out.println("학생이 존재하지 않습니다.");
+			}else {
+			System.out.println("성명:" + vo.getSname());
+			System.out.println("전화번호:" + vo.getTel());
+			System.out.println();
+			}
+			break;
+		case 3: // 목록
+			System.out.println("-------------------------");
+			System.out.println("학번\t성명\t전화번호");
+			System.out.println("-------------------------");
+			ArrayList<StudentVO> array=dao.list();
+			for(int i=0; i<array.size(); i++) {
+				vo=array.get(i);
+				System.out.print(vo.getSno() + "\t");
+				System.out.print(vo.getSname() + "\t");
+				System.out.println(vo.getTel());
+			}
+			System.out.println();
+			break;
+		case 4: // 수정
+			System.out.print("수정할번호>");
+			sno=s.next();
+			vo=dao.read(sno);
+			if(vo.getSno()==null) {
+				System.out.println("학생이 존재하지 않습니다.");
+			}else {
+				System.out.print("이름(" + vo.getSname() + ")>");
+				vo.setSname(s.next());
+				System.out.print("전화(" + vo.getTel() + ")>");
+				vo.setTel(s.next());
+				dao.update(vo);
+				System.out.println("수정완료");
+			}
+			System.out.println();
+			break;
+		case 5: // 삭제
+			System.out.print("삭제할번호>");
+			sno=s.next();
+			
+			try {
+			vo=dao.read(sno);
+			if(vo.getSno()==null) {
+				System.out.println("학생이 존재하지 않습니다.");
+			}else {
+				dao.delete(sno);
+			}
+			System.out.println("삭제완료\n");
+			}
+			catch(Exception e) {
+				System.out.println("실행불가");
+			}
+			break;
+		case 6: // 종료
+			run=false;
+			System.out.println("프로그램 종료");
+			break;
+		default:
+			System.out.println("잘못된 입력입니다.");
+		}
+		}
+	} // main method
+} // class

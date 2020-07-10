@@ -1,0 +1,21 @@
+package ex03;
+
+import java.util.Scanner;
+
+public class Sample {
+
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		System.out.print("증속>");
+		System.out.print("감속>");
+		int up=s.nextInt();
+		int down=s.nextInt();
+		
+		int i=0;
+		int speed=i+up-down;
+		System.out.println("현재속도:" + speed);
+		
+
+	}
+
+}

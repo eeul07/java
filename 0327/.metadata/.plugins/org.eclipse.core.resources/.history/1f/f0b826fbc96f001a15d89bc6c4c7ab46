@@ -1,0 +1,80 @@
+package ex01;
+
+public class Sample {
+
+	public static void main(String[] args) {
+		// 변수타입
+		int intNum1 = 10, intNum2 = 20;
+		double dblNum1 = 10.3, dblNum2 = 20.4;
+		char chr1 = 'A', chr2 = 'B';
+		String str1 = "홍길동", str2 = "심청이";
+		String str3 = new String("홍길동"); // String은 참조타입이기에 가능
+		
+		System.out.println("intNum1 = " + intNum1); // 결과 : intNum1 = 10
+		
+		
+		// 연산자
+		// 1.산술연산자(+, -, *, /, %)
+		int intResult1 = intNum1 + intNum2;
+		System.out.println("intNum1 + intNum2 = " + intResult1); // 결과 : intNum1 + intNum2 = 30
+		double dblResult1 = dblNum1 + dblNum2;
+		System.out.println("dblNum1 + dblNum2 = " + dblResult1); // 결과 : dblNum1 + dblNum2 = 30.7
+		int dblResult2 = (int)dblNum1 - (int)dblNum2; // 강제형변환
+		System.out.println("dblNum1 - dblNum2 = " + dblResult2); // 결과 : dblNum1 - dblNum2 = -10
+		
+		// 2.비교연산자(==, !=, >=, <=, >, <)
+		if(intNum1!=intNum2) {
+			System.out.println("두 수가 같습니다.");
+		}else {
+			System.out.println("두 수가 같지 않습니다.");
+		} // 결과 : 두 수가 같습니다.
+		
+		if(str1.equals(str2)) {
+			System.out.println("같다.");
+		}else {System.out.println("같지않다.");
+		} // 결과 : 같지않다.
+		
+		// 3.논리연산자(!, &&, ||)
+		boolean isRun;
+		isRun = (intNum1 >= 10) && (intNum2 >= 20); // 두 조건이 모두 true여야만 true로 출력
+		if(isRun) {
+			System.out.println("참");
+		}else {
+			System.out.println("거짓");
+		}
+		
+		// 조건문
+		int score = 97;
+		// 점수가 90점 이상이면 A출력
+		// 점수가 80점 이상이면 B출력
+		// 점수가 70점 이상이면 C출력
+		// 점수가 70점 미만이면 F출력
+		// if-else if-else문 사용
+		if(score >= 90) {
+			System.out.println("A");
+		}else if(score >= 80) {
+			System.out.println("B");
+		}else if(score >= 70) {
+			System.out.println("C");
+		}else {
+			System.out.println("F");
+		} // 결과 : A
+		
+		//100~95점 사이면 A+
+		//94~90점 사이면 A0
+		if(score <= 100 && score >= 95) {
+			System.out.println("A+");
+		}else if(score < 95 && score >= 90) {
+			System.out.println("A0");
+		} // 결과 : A+
+		
+		//반복문
+		int sum = 0;
+		for(int i=1; i<=100; i++) {
+			sum = sum + i;
+		}
+		System.out.println("100까지의 합계 = " + sum);
+		
+		
+	} // main
+} // class

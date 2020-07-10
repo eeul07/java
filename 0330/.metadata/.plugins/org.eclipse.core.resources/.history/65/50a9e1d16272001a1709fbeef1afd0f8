@@ -1,0 +1,56 @@
+package ex03;
+
+import java.util.Scanner;
+
+public class Sample {
+
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		boolean run=true;
+		
+		while(run) {
+			System.out.println("---------------------------------------------");
+			System.out.println("1.상품등록 | 2.상품목록 | 3.상품수정 | 4.종료");
+			System.out.println("---------------------------------------------");
+			System.out.print("선택>");
+			int menu=s.nextInt();
+			
+			switch(menu) {
+			case 1:
+				System.out.println("---------------------------------------------");
+				System.out.println("상품입력");
+				System.out.println("---------------------------------------------");
+				System.out.print("상품번호>");
+				String sno=s.next();
+				System.out.print("상품명>");
+				String sname=s.next();
+				System.out.print("단가>");
+				int price=s.nextInt();
+				System.out.print("수량>");
+				int stock=s.nextInt();
+				System.out.println("상품이 입력되었습니다.");
+				System.out.println();
+				break;
+			case 2:
+				System.out.println("---------------------------------------------");
+				System.out.println("상품번호\t상품명\t단가\t수량\t금액");
+				System.out.println("---------------------------------------------");
+				
+				break;
+			case 3:
+				System.out.println("---------------------------------------------");
+				System.out.println("상품수정");
+				System.out.println("---------------------------------------------");
+				break;
+			case 4:
+				run=false;
+				System.out.println("프로그램 종료");
+				break;
+			default:
+				System.out.println("잘못된 입력입니다.");
+			}
+		}
+
+	}
+
+}

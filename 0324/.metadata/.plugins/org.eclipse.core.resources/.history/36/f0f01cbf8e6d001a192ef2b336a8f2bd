@@ -1,0 +1,33 @@
+package ex04;
+
+import java.util.Scanner;
+
+public class Sample {
+
+	public static void main(String[] args) {
+		switch1();
+
+	}
+	
+	public static void switch1() {
+		System.out.println("switch 예제1");
+		
+		Scanner scanner = new Scanner(System.in);
+		int time = scanner.nextInt(); //키보드에서 DATA입력
+		
+		switch(time) {
+		case 9:
+			System.out.println("회의를 합니다.");
+			break;
+		case 8:
+			System.out.println("출근을 합니다.");
+			break;
+		case 10:
+			System.out.println("업무를 봅니다.");
+			break;
+		default:
+			System.out.println("외근을 합니다.");
+		}
+	}
+
+}

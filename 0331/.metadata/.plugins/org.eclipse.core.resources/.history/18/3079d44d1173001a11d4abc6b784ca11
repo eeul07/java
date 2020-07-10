@@ -1,0 +1,25 @@
+package ex03;
+
+// 성적관리용 클래스
+public class Grade {
+	// 필드
+	String gno;
+	String gname;
+	int kor;
+	int eng;
+	int mat;
+	int tot;
+	// 생성자
+	public Grade(String gno, String gname, int kor, int eng, int mat) {
+		super();
+		this.gno = gno;
+		this.gname = gname;
+		this.kor = kor;
+		this.eng = eng;
+		this.mat = mat;
+	}
+	// 메서드
+	void printGrade(Grade g) {
+		System.out.print(g.gno + "\t" + g.gname + "\t" + g.kor + "\t" + g.eng + "\t" + g.mat );
+	}
+} // class

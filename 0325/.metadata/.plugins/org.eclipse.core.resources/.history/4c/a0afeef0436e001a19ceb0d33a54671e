@@ -1,0 +1,25 @@
+package ex03;
+
+import java.util.Scanner;
+
+public class Sample {
+
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		System.out.print("1.증속");
+		System.out.print("2.감속");
+		System.out.print("3.중지\n");
+		int menu=s.nextInt();
+		
+		switch(menu) {
+		case 1:
+			int i=0;
+			int speed=i+1;
+			System.out.println("현재속도:" + speed);
+		case 2:
+			
+		}
+
+	}
+
+}

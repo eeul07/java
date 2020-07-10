@@ -1,0 +1,13 @@
+package ex01;
+
+public class Sample {
+
+	public static void main(String[] args) {
+		Phone p1=new Phone();
+		p1.powerOn();
+		 p1.sendVoice("여보세요!");
+		 
+
+	}
+
+}

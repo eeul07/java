@@ -1,0 +1,20 @@
+package ex01;
+
+public class Student { // 클래스
+	// 필드(속성)
+	String sno;
+	String sname;
+	String tel;
+	
+	// 기본생성자(생략가능)
+	Student(){
+	}
+	
+	// 메서드
+	public void printStudent(Student s) {
+		System.out.println("------------------------------");
+		System.out.println("번호:" + s.sno);
+		System.out.println("이름:" + s.sname);
+		System.out.println("전화번호:" + s.tel);
+	}
+}

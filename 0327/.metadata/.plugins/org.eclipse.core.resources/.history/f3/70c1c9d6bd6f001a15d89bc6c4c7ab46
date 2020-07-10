@@ -1,0 +1,17 @@
+package ex01;
+
+public class Sample {
+
+	public static void main(String[] args) {
+		// 변수타입
+		int intNum1 = 10, intNum2 = 20;
+		double dblNum1 = 10.3, dblNum2 = 20.4;
+		char chr1 = 'A', chr2 = 'B';
+		String str1 = "홍길동", str2 = "심청이";
+		Boolean bol1 = true, bol2 = false;
+		
+		System.out.println("intNum1=" + intNum1);
+
+	}
+
+}

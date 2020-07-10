@@ -1,0 +1,22 @@
+package ex05;
+
+public class Sample {
+
+	public static void main(String[] args) {
+		String[] name= {"홍길동", "심청이", "강감찬"};
+		int[] kor= {90, 95, 70};
+		int[] eng= {90, 95, 70};
+		int[] mat= {90, 95, 70};
+		int[] tot=new int[3];
+		double[] avg=new double[3];
+		
+		System.out.println("이름\t국어\t영어\t수학\t총점\t평균");
+		for(int i=0; i<=2; i++) {
+			tot[i]=kor[i]+eng[i]+mat[i];
+			avg[i]=tot[i]/3;
+			System.out.println(name[i]+"\t"+kor[i]+"\t"+eng[i]+"\t"+mat[i]);
+		}
+
+	}
+
+}

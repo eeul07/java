@@ -1,0 +1,16 @@
+package ex01;
+
+public class Sample {
+
+	public static void main(String[] args) {
+		System.out.print("안녕!!!");
+		System.out.println("나는 김예슬..");
+		
+		//정수형변수
+		int num1=100;
+		int num2=200;
+		System.out.println("num=" + num1);
+		System.out.println("num=" + num2);
+	}
+
+}

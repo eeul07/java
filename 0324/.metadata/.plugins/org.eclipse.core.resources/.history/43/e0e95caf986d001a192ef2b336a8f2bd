@@ -1,0 +1,17 @@
+package ex05;
+
+public class Sample {
+
+	public static void main(String[] args) {
+		for1();
+
+	}
+
+	//5까지 반복 출력
+	public static void for1() {
+		System.out.println("**예제1***");
+		for(int i=0; i<=10; i+=2) { //i=i+2와 같다
+			System.out.println(i);
+		}
+	}
+}

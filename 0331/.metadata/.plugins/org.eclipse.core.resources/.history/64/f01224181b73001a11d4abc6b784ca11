@@ -1,0 +1,51 @@
+package ex04;
+
+import java.util.Scanner;
+
+public class Sample {
+
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		boolean run=true;
+		Grade[] grade=new grade[100];
+		int count=0;
+		
+		while(run) {
+			System.out.println("-------------------------------------------------");
+			System.out.println("| 1.성적입력 | 2.성적목록 | 3.성적조회 | 4.종료 |");
+			System.out.println("-------------------------------------------------");
+			System.out.print("메뉴선택>");
+			int menu=s.nextInt();
+			
+			switch(menu) {
+			case 1:
+				grade[count]=new Grade();
+				System.out.print("학번>");
+				grade[count].sno=s.next();
+				System.out.print("이름>");
+				grade[count].sname=s.next();
+				System.out.print("국어>");
+				grade[count].kor=s.nextInt();
+				System.out.print("영어>");
+				grade[count].eng=s.nextInt();
+				System.out.print("수학>");
+				grade[count].mat=s.nextInt();
+				System.out.println("입력완료\n");
+				count=count+1;
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				run=false;
+				System.out.println("프로그램 종료");
+				break;
+			default:
+				System.out.println("잘못된 입력입니다.");
+			}
+		}
+
+	}
+
+}

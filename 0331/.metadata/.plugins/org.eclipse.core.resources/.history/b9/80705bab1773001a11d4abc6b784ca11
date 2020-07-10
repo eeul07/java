@@ -1,0 +1,13 @@
+package ex03;
+
+public class Sample {
+
+	public static void main(String[] args) {
+		
+		Grade g1=new Grade("01", "홍길동", 90, 80, 90);
+		g1.printGrade(g1);
+		
+		Grade g2=new Grade("02", "심청이", 95, 88, 75);
+		g2.printGrade(g2);
+	}
+}

@@ -1,0 +1,13 @@
+package ex03;
+
+public class Sample {
+
+	public static void main(String[] args) {
+		//문자형 변수
+		char a='A';
+		String name="김예슬";
+		System.out.println("반:" + a);
+		System.out.println("이름:" + name);
+	}
+
+}
